@@ -2,7 +2,7 @@ package me.xss6.xsware.gui.hud.element;
 
 import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.gui.component.Component;
-import me.xss6.xsware.hack.hacks.client.HudEditor;
+import me.xss6.xsware.module.modules.client.HudEditor;
 import me.xss6.xsware.util.RenderUtil2D;
 import me.xss6.xsware.util.Globals;
 import net.minecraft.client.gui.ScaledResolution;

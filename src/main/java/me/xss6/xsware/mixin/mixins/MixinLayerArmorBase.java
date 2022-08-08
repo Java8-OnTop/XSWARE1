@@ -1,6 +1,6 @@
 package me.xss6.xsware.mixin.mixins;
 
-import me.xss6.xsware.hack.hacks.render.NoRender;
+import me.xss6.xsware.module.modules.render.NoRender;
 import net.minecraft.client.renderer.entity.layers.LayerArmorBase;
 import net.minecraft.entity.EntityLivingBase;
 import org.spongepowered.asm.mixin.Mixin;

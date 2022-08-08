@@ -1,7 +1,7 @@
 package me.xss6.xsware.mixin.mixins;
 
 import me.xss6.xsware.XSWARE;
-import me.xss6.xsware.hack.hacks.chat.CustomChat;
+import me.xss6.xsware.module.modules.chat.CustomChat;
 import me.xss6.xsware.util.elements.Rainbow;
 import net.minecraft.client.gui.ChatLine;
 import net.minecraft.client.gui.FontRenderer;

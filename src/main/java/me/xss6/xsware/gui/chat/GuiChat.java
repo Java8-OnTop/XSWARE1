@@ -2,8 +2,8 @@ package me.xss6.xsware.gui.chat;
 
 import com.google.common.collect.Lists;
 import me.xss6.xsware.XSWARE;
-import me.xss6.xsware.hack.hacks.chat.CustomChat;
-import me.xss6.xsware.hack.hacks.player.PlayerSpoofer;
+import me.xss6.xsware.module.modules.chat.CustomChat;
+import me.xss6.xsware.module.modules.player.PlayerSpoofer;
 import me.xss6.xsware.util.AnimationUtil;
 import me.xss6.xsware.util.Globals;
 import me.xss6.xsware.util.elements.Rainbow;

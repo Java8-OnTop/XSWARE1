@@ -1,6 +1,6 @@
 package me.xss6.xsware.mixin.mixins;
 
-import me.xss6.xsware.hack.hacks.render.ShulkerPreview;
+import me.xss6.xsware.module.modules.render.ShulkerPreview;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.Gui;

@@ -1,6 +1,6 @@
 package me.xss6.xsware.setting.type;
 
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 import me.xss6.xsware.setting.Setting;
 import org.lwjgl.input.Keyboard;
 
@@ -13,7 +13,7 @@ import java.util.function.Predicate;
 
 public class KeySetting extends Setting<Integer> {
 
-    public KeySetting(String name, int value, Hack parent) {
+    public KeySetting(String name, int value, Module parent) {
         super(name, value, parent);
     }
 
@@ -21,7 +21,7 @@ public class KeySetting extends Setting<Integer> {
         super(name, value, parent);
     }
 
-    public KeySetting(String name, int value, Hack parent, Predicate shown) {
+    public KeySetting(String name, int value, Module parent, Predicate shown) {
         super(name, value, parent, shown);
     }
 

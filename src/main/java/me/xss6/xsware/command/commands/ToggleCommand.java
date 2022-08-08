@@ -3,7 +3,7 @@ package me.xss6.xsware.command.commands;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.command.Command;
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 import me.xss6.xsware.util.ClientMessage;
 
 public class ToggleCommand extends Command {
@@ -15,11 +15,11 @@ public class ToggleCommand extends Command {
     @Override
     public void execute(String[] message) {
         String name = message[0].replaceAll("_", " ");
-        Hack hack = XSWARE.HACKS.getHackByName(name);
-        if (hack != null) {
-            hack.toggle();
+        Module module = XSWARE.Modules.getHackByName(name);
+        if (module != null) {
+            module.toggle();
         } else {
-            ClientMessage.sendErrorMessage("Cannot find hack by name " + ChatFormatting.BOLD + name);
+            ClientMessage.sendErrorMessage("Cannot find module by name " + ChatFormatting.BOLD + name);
         }
     }
 }

@@ -2,7 +2,7 @@ package me.xss6.xsware.command.commands;
 
 import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.command.Command;
-import me.xss6.xsware.hack.hacks.combat.Burrow;
+import me.xss6.xsware.module.modules.combat.Burrow;
 import me.xss6.xsware.util.ClientMessage;
 import me.xss6.xsware.util.WhitelistUtil;
 import net.minecraft.block.Block;
@@ -22,7 +22,7 @@ public class BurrowBlockCommand extends Command {
 
     @Override
     public void execute(String[] message) {
-        Burrow bClass = (Burrow) XSWARE.HACKS.getHackByName("Burrow");
+        Burrow bClass = (Burrow) XSWARE.Modules.getHackByName("Burrow");
         Block b = WhitelistUtil.findBlock(message[0]);
 
         if(b.equals(null)){

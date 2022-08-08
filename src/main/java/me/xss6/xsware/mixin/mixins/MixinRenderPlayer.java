@@ -1,9 +1,9 @@
 package me.xss6.xsware.mixin.mixins;
 
-import me.xss6.xsware.hack.hacks.player.PlayerSpoofer;
-import me.xss6.xsware.hack.hacks.render.HandColour;
-import me.xss6.xsware.hack.hacks.render.Nametags;
-import me.xss6.xsware.hack.hacks.render.Hausemaster;
+import me.xss6.xsware.module.modules.player.PlayerSpoofer;
+import me.xss6.xsware.module.modules.render.HandColour;
+import me.xss6.xsware.module.modules.render.Nametags;
+import me.xss6.xsware.module.modules.render.Hausemaster;
 import me.xss6.xsware.util.SkinStorageManipulationer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.AbstractClientPlayer;

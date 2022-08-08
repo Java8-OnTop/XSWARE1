@@ -4,7 +4,7 @@ import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.gui.XswareGuiNew;
 import me.xss6.xsware.gui.component.Component;
 import me.xss6.xsware.gui.component.HackButton;
-import me.xss6.xsware.hack.hacks.client.Gui;
+import me.xss6.xsware.module.modules.client.Gui;
 import me.xss6.xsware.setting.type.ParentSetting;
 import me.xss6.xsware.util.RenderUtil2D;
 

@@ -1,6 +1,6 @@
 package me.xss6.xsware.setting.type;
 
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 import me.xss6.xsware.setting.Setting;
 
 import java.util.function.Predicate;
@@ -10,7 +10,7 @@ public class IntSetting extends Setting<Integer> {
     private final int min;
     private final int max;
 
-    public IntSetting(String name, int value, int min, int max, Hack parent) {
+    public IntSetting(String name, int value, int min, int max, Module parent) {
         super(name, value, parent);
 
         this.min = min;
@@ -24,7 +24,7 @@ public class IntSetting extends Setting<Integer> {
         this.max = max;
     }
 
-    public IntSetting(String name, int value, int min, int max, Hack parent, Predicate shown) {
+    public IntSetting(String name, int value, int min, int max, Module parent, Predicate shown) {
         super(name, value, parent, shown);
 
         this.min = min;

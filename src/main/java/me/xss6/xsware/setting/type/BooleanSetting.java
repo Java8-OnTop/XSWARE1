@@ -1,13 +1,13 @@
 package me.xss6.xsware.setting.type;
 
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 import me.xss6.xsware.setting.Setting;
 
 import java.util.function.Predicate;
 
 public class BooleanSetting extends Setting<Boolean> {
 
-    public BooleanSetting(String name, Boolean value, Hack parent) {
+    public BooleanSetting(String name, Boolean value, Module parent) {
         super(name, value, parent);
     }
 
@@ -15,7 +15,7 @@ public class BooleanSetting extends Setting<Boolean> {
         super(name, value, parent);
     }
 
-    public BooleanSetting(String name, Boolean value, Hack parent, Predicate shown) {
+    public BooleanSetting(String name, Boolean value, Module parent, Predicate shown) {
         super(name, value, parent, shown);
     }
 

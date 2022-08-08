@@ -1,6 +1,6 @@
 package me.xss6.xsware.mixin.mixins;
 
-import me.xss6.xsware.hack.hacks.render.ExtraTab;
+import me.xss6.xsware.module.modules.render.ExtraTab;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.gui.GuiPlayerTabOverlay;
 import net.minecraft.client.network.NetworkPlayerInfo;

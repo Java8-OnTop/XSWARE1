@@ -5,7 +5,7 @@ import me.xss6.xsware.event.events.ColorCopyEvent;
 import me.xss6.xsware.gui.XswareGuiNew;
 import me.xss6.xsware.gui.component.Component;
 import me.xss6.xsware.gui.component.HackButton;
-import me.xss6.xsware.hack.hacks.client.Gui;
+import me.xss6.xsware.module.modules.client.Gui;
 import me.xss6.xsware.setting.type.ColourSetting;
 import me.xss6.xsware.util.RenderUtil2D;
 import me.xss6.xsware.util.Globals;
@@ -16,7 +16,7 @@ import java.awt.*;
 /**
  * @author XSS6
  * @since 29/04/2021
- * @author wallhacks0
+ * @author XSS60
  * original picker was made by LinusTouchTips
  */
 

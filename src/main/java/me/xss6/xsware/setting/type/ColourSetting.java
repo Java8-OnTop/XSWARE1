@@ -1,6 +1,6 @@
 package me.xss6.xsware.setting.type;
 
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 import me.xss6.xsware.setting.Setting;
 import me.xss6.xsware.util.elements.Colour;
 
@@ -11,7 +11,7 @@ public class ColourSetting extends Setting<Colour> {
 
     private boolean rainbow;
 
-    public ColourSetting(String name, Colour value, Hack parent) {
+    public ColourSetting(String name, Colour value, Module parent) {
         super(name, value, parent);
     }
 
@@ -19,7 +19,7 @@ public class ColourSetting extends Setting<Colour> {
         super(name, value, parent);
     }
 
-    public ColourSetting(String name, Colour value, Hack parent, Predicate shown) {
+    public ColourSetting(String name, Colour value, Module parent, Predicate shown) {
         super(name, value, parent, shown);
     }
 

@@ -1,6 +1,6 @@
 package me.xss6.xsware.setting.type;
 
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 import me.xss6.xsware.setting.Setting;
 
 import java.util.List;
@@ -10,7 +10,7 @@ public class EnumSetting extends Setting<String> {
 
     private final List<String> modes;
 
-    public EnumSetting(String name, String value, List<String> modes, Hack parent) {
+    public EnumSetting(String name, String value, List<String> modes, Module parent) {
         super(name, value, parent);
 
         this.modes = modes;
@@ -22,7 +22,7 @@ public class EnumSetting extends Setting<String> {
         this.modes = modes;
     }
 
-    public EnumSetting(String name, String value, List<String> modes, Hack parent, Predicate shown) {
+    public EnumSetting(String name, String value, List<String> modes, Module parent, Predicate shown) {
         super(name, value, parent, shown);
 
         this.modes = modes;

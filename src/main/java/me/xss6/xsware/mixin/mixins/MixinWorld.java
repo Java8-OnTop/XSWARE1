@@ -3,7 +3,7 @@ package me.xss6.xsware.mixin.mixins;
 import com.google.common.base.Predicate;
 import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.event.events.PushEvent;
-import me.xss6.xsware.hack.hacks.render.NoRender;
+import me.xss6.xsware.module.modules.render.NoRender;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;

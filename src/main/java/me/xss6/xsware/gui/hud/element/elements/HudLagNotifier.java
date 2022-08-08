@@ -4,7 +4,7 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.event.events.Render2DEvent;
 import me.xss6.xsware.gui.hud.element.HudElement;
-import me.xss6.xsware.hack.hacks.client.HudEditor;
+import me.xss6.xsware.module.modules.client.HudEditor;
 import me.xss6.xsware.util.HudUtil;
 
 @HudElement.Element(name = "Lag Notifier", posY = 100, posX = 100)

@@ -1,6 +1,6 @@
 package me.xss6.xsware.mixin.mixins;
 
-import me.xss6.xsware.hack.hacks.player.PlayerSpoofer;
+import me.xss6.xsware.module.modules.player.PlayerSpoofer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import org.spongepowered.asm.mixin.Mixin;

@@ -4,15 +4,15 @@ import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.gui.XswareGuiNew;
 import me.xss6.xsware.gui.component.Component;
 import me.xss6.xsware.gui.component.HackButton;
-import me.xss6.xsware.hack.Hack;
-import me.xss6.xsware.hack.hacks.client.Gui;
+import me.xss6.xsware.module.Module;
+import me.xss6.xsware.module.modules.client.Gui;
 import me.xss6.xsware.setting.type.KeySetting;
 import me.xss6.xsware.util.RenderUtil2D;
 import org.lwjgl.input.Keyboard;
 
 /**
  * @author XSS6
- * @auther Wallhacks
+ * @auther XSS6
  * @since 29/04/2021
  */
 
@@ -26,7 +26,7 @@ public class ModuleBindComponent extends Component {
     private int y;
     private final boolean normal;
 
-    private Hack module;
+    private Module module;
 
     public ModuleBindComponent(HackButton button, int offset) {
         this.parent = button;

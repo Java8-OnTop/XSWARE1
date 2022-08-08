@@ -4,8 +4,8 @@ import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.gui.XswareGuiNew;
 import me.xss6.xsware.gui.component.Component;
 import me.xss6.xsware.gui.component.HackButton;
-import me.xss6.xsware.hack.Hack;
-import me.xss6.xsware.hack.hacks.client.Gui;
+import me.xss6.xsware.module.Module;
+import me.xss6.xsware.module.modules.client.Gui;
 import me.xss6.xsware.setting.type.KeySetting;
 import me.xss6.xsware.util.RenderUtil2D;
 import org.lwjgl.input.Keyboard;
@@ -26,7 +26,7 @@ public class KeyBindComponent extends Component {
     private int y;
     private boolean normal;
 
-    private Hack module;
+    private Module module;
 
     public KeyBindComponent(HackButton button, int offset) {
         this.parent = button;

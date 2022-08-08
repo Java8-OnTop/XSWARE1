@@ -4,14 +4,12 @@ package me.xss6.xsware.gui.component;
 import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.gui.XswareGuiNew;
 import me.xss6.xsware.gui.component.components.*;
-import me.xss6.xsware.hack.Hack;
-import me.xss6.xsware.hack.hacks.client.Gui;
+import me.xss6.xsware.module.Module;
+import me.xss6.xsware.module.modules.client.Gui;
 import me.xss6.xsware.setting.Setting;
-import me.xss6.xsware.setting.type.*;
 import me.xss6.xsware.setting.type.*;
 import me.xss6.xsware.util.RenderUtil;
 import me.xss6.xsware.util.RenderUtil2D;
-import me.xss6.xsware.gui.component.components.*;
 import org.lwjgl.opengl.GL11;
 
 import java.awt.*;
@@ -24,7 +22,7 @@ import java.util.ArrayList;
 
 public class HackButton extends Component {
 
-    public Hack mod;
+    public Module mod;
     public CategoryComponent parent;
     private ArrayList<Component> subcomponents;
     private ArrayList<Setting> notInitSettings;
@@ -46,7 +44,7 @@ public class HackButton extends Component {
     }
 
 
-    public void init(Hack mod, CategoryComponent parent, int offset, boolean update) {
+    public void init(Module mod, CategoryComponent parent, int offset, boolean update) {
         if (!update) {
             this.mod = mod;
             this.parent = parent;

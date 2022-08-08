@@ -2,7 +2,7 @@ package me.xss6.xsware.mixin.mixins;
 
 import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.gui.CustomSplashScreen;
-import me.xss6.xsware.hack.hacks.client.Gui;
+import me.xss6.xsware.module.modules.client.Gui;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
@@ -27,8 +27,8 @@ public abstract class MixinMinecraft {
 
     @Inject(method={"runTickKeyboard"}, at={@At(value="FIELD", target="Lnet/minecraft/client/Minecraft;currentScreen:Lnet/minecraft/client/gui/GuiScreen;", ordinal=0)}, locals=LocalCapture.CAPTURE_FAILSOFT)
     private void onRunTickKeyboard(CallbackInfo ci, int i) {
-        if (Keyboard.getEventKeyState() && XSWARE.HACKS != null) {
-            XSWARE.HACKS.onKeyDown(i);
+        if (Keyboard.getEventKeyState() && XSWARE.Modules != null) {
+            XSWARE.Modules.onKeyDown(i);
         }
     }
 

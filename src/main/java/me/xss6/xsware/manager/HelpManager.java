@@ -1,6 +1,6 @@
 package me.xss6.xsware.manager;
 
-import me.xss6.xsware.hack.hacks.chat.CustomChat;
+import me.xss6.xsware.module.modules.chat.CustomChat;
 import me.xss6.xsware.util.ClientMessage;
 import me.xss6.xsware.util.Globals;
 

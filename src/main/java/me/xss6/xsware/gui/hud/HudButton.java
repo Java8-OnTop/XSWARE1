@@ -6,7 +6,7 @@ import me.xss6.xsware.gui.component.CategoryComponent;
 import me.xss6.xsware.gui.component.Component;
 import me.xss6.xsware.gui.hud.element.HudDragComponent;
 import me.xss6.xsware.gui.hud.element.HudElement;
-import me.xss6.xsware.hack.hacks.client.Gui;
+import me.xss6.xsware.module.modules.client.Gui;
 import me.xss6.xsware.util.RenderUtil2D;
 import me.xss6.xsware.util.Globals;
 

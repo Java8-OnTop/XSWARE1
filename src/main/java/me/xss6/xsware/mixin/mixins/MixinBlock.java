@@ -1,6 +1,6 @@
 package me.xss6.xsware.mixin.mixins;
 
-import me.xss6.xsware.hack.hacks.movement.Jesus;
+import me.xss6.xsware.module.modules.movement.Jesus;
 import me.xss6.xsware.util.EntityUtil;
 import me.xss6.xsware.util.Globals;
 import net.minecraft.block.Block;

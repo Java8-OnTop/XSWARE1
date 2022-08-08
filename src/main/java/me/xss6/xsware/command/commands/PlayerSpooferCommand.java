@@ -2,7 +2,7 @@ package me.xss6.xsware.command.commands;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.xss6.xsware.command.Command;
-import me.xss6.xsware.hack.hacks.player.PlayerSpoofer;
+import me.xss6.xsware.module.modules.player.PlayerSpoofer;
 import me.xss6.xsware.util.ClientMessage;
 
 /**

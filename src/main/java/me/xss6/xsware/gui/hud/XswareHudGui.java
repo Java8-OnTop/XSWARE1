@@ -2,9 +2,9 @@ package me.xss6.xsware.gui.hud;
 
 import me.xss6.xsware.gui.component.CategoryComponent;
 import me.xss6.xsware.gui.component.Component;
-import me.xss6.xsware.hack.Hack;
-import me.xss6.xsware.hack.hacks.client.Gui;
-import me.xss6.xsware.hack.hacks.client.HudEditor;
+import me.xss6.xsware.module.Module;
+import me.xss6.xsware.module.modules.client.Gui;
+import me.xss6.xsware.module.modules.client.HudEditor;
 import me.xss6.xsware.util.RenderUtil2D;
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.gui.GuiScreen;
@@ -25,7 +25,7 @@ public class XswareHudGui extends GuiScreen {
 
     public XswareHudGui(){
         categoryComponents = new ArrayList<>();
-        categoryComponents.add(new CategoryComponent(Hack.Category.HUD));
+        categoryComponents.add(new CategoryComponent(Module.Category.HUD));
         linesH = new ArrayList<>();
         linesV = new ArrayList<>();
     }

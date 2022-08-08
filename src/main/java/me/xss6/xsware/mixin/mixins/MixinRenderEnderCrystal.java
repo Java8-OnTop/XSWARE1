@@ -1,7 +1,7 @@
 package me.xss6.xsware.mixin.mixins;
 
 import me.xss6.xsware.event.events.RenderEntityModelEvent;
-import me.xss6.xsware.hack.hacks.render.CrystalRender;
+import me.xss6.xsware.module.modules.render.CrystalRender;
 import me.xss6.xsware.util.EntityUtil;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.model.ModelBase;

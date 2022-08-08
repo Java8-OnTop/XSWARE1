@@ -2,8 +2,8 @@ package me.xss6.xsware.util;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.xss6.xsware.XSWARE;
-import me.xss6.xsware.hack.hacks.client.HudEditor;
-import me.xss6.xsware.hack.hacks.player.PlayerSpoofer;
+import me.xss6.xsware.module.modules.client.HudEditor;
+import me.xss6.xsware.module.modules.player.PlayerSpoofer;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.ScaledResolution;
 import net.minecraft.init.Items;

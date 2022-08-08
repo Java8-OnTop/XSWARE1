@@ -5,14 +5,13 @@ import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.event.events.*;
 import me.xss6.xsware.event.processor.CommitEvent;
 import me.xss6.xsware.gui.alt.defult.GuiAltButton;
-import me.xss6.xsware.hack.Hack;
-import me.xss6.xsware.hack.hacks.client.Gui;
-import me.xss6.xsware.hack.hacks.render.Chams;
+import me.xss6.xsware.module.Module;
+import me.xss6.xsware.module.modules.client.Gui;
+import me.xss6.xsware.module.modules.render.Chams;
 import me.xss6.xsware.util.ClientMessage;
 import me.xss6.xsware.util.Globals;
 import me.xss6.xsware.util.elements.GLUProjection;
 import me.xss6.xsware.util.elements.Timer;
-import me.xss6.xsware.event.events.*;
 import net.minecraft.client.gui.GuiMainMenu;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.gui.ScaledResolution;
@@ -64,18 +63,18 @@ public class Events implements Globals {
             return;
         }
         time = System.currentTimeMillis();
-        for(Hack hack : XSWARE.HACKS.getHacks()) {
-            if (hack.getBind() >= -1 || hack.getBind() == Keyboard.KEY_NONE) continue;
-            if (button == 0 && hack.getBind() == -2) {
-                hack.toggle();
-            } else if (button == 1 && hack.getBind()  == -3) {
-                hack.toggle();
-            } else if (button == 2 && hack.getBind() == -4) {
-                hack.toggle();
-            } else if (button == 3 && hack.getBind()  == -5) {
-                hack.toggle();
-            } else if (button == 4 && hack.getBind() == -6) {
-                hack.toggle();
+        for(Module module : XSWARE.Modules.getHacks()) {
+            if (module.getBind() >= -1 || module.getBind() == Keyboard.KEY_NONE) continue;
+            if (button == 0 && module.getBind() == -2) {
+                module.toggle();
+            } else if (button == 1 && module.getBind()  == -3) {
+                module.toggle();
+            } else if (button == 2 && module.getBind() == -4) {
+                module.toggle();
+            } else if (button == 3 && module.getBind()  == -5) {
+                module.toggle();
+            } else if (button == 4 && module.getBind() == -6) {
+                module.toggle();
             }
         }
     }
@@ -103,7 +102,7 @@ public class Events implements Globals {
     @SubscribeEvent
     public void onUpdate(LivingEvent.LivingUpdateEvent event) {
         if (!nullCheck() && event.getEntity().getEntityWorld().isRemote && event.getEntityLiving().equals(mc.player)) {
-            XSWARE.HACKS.onUpdate();
+            XSWARE.Modules.onUpdate();
             XSWARE.HELP_MANAGER.onUpdate();
             XSWARE.KD_MANAGER.onUpdate();
         }
@@ -112,7 +111,7 @@ public class Events implements Globals {
     @SubscribeEvent
     public void onTick(TickEvent.ClientTickEvent event) {
         if (!nullCheck()) {
-            XSWARE.HACKS.onTick();
+            XSWARE.Modules.onTick();
         }
     }
 
@@ -136,7 +135,7 @@ public class Events implements Globals {
         if (event.getType().equals(RenderGameOverlayEvent.ElementType.TEXT)) {
             ScaledResolution resolution = new ScaledResolution(mc);
             Render2DEvent render2DEvent = new Render2DEvent(event.getPartialTicks(), resolution);
-            XSWARE.HACKS.onRender2D(render2DEvent);
+            XSWARE.Modules.onRender2D(render2DEvent);
             XSWARE.HUD_MANAGER.onRender2D(render2DEvent);
             GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
         }
@@ -165,7 +164,7 @@ public class Events implements Globals {
         GL11.glGetInteger(2978, viewPort);
         ScaledResolution scaledResolution = new ScaledResolution(mc);
         projection.updateMatrices(viewPort, modelView, projectionPort, (double) scaledResolution.getScaledWidth() / (double) mc.displayWidth, (double) scaledResolution.getScaledHeight() / (double) mc.displayHeight);
-        XSWARE.HACKS.onRender3D(render3dEvent);
+        XSWARE.Modules.onRender3D(render3dEvent);
         GlStateManager.glLineWidth(1.0f);
         GlStateManager.shadeModel(7424);
         GlStateManager.disableBlend();
@@ -183,13 +182,13 @@ public class Events implements Globals {
 
     @SubscribeEvent
     public void onClientDisconnect(FMLNetworkEvent.ClientDisconnectionFromServerEvent event) {
-        XSWARE.HACKS.onLogout();
+        XSWARE.Modules.onLogout();
         XSWARE.POP_MANAGER.onLogout();
     }
 
     @SubscribeEvent
     public void onClientConnect(FMLNetworkEvent.ClientConnectedToServerEvent event) {
-        XSWARE.HACKS.onLogin();
+        XSWARE.Modules.onLogin();
         if(mc.world == null || !mc.world.isRemote)return;
         XSWARE.CONFIG_MANAGER.onLogin(event);
     }

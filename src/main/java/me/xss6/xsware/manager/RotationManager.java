@@ -1,7 +1,7 @@
 package me.xss6.xsware.manager;
 
 import me.xss6.xsware.event.events.PacketEvent;
-import me.xss6.xsware.hack.hacks.misc.NoRotate;
+import me.xss6.xsware.module.modules.misc.NoRotate;
 import me.xss6.xsware.util.Globals;
 import me.xss6.xsware.util.MathsUtil;
 import me.xss6.xsware.util.RotationUtil;

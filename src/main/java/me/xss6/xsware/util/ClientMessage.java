@@ -2,8 +2,8 @@ package me.xss6.xsware.util;
 
 import com.mojang.realmsclient.gui.ChatFormatting;
 import me.xss6.xsware.XSWARE;
-import me.xss6.xsware.hack.Hack;
-import me.xss6.xsware.hack.hacks.chat.ToggleMessages;
+import me.xss6.xsware.module.Module;
+import me.xss6.xsware.module.modules.chat.ToggleMessages;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.Style;
 import net.minecraft.util.text.TextComponentBase;
@@ -16,25 +16,25 @@ import java.util.regex.Pattern;
 public class ClientMessage implements Globals {
 
     private static final String opener() {
-        if (mc.player.getName().equalsIgnoreCase("wallhacks_"))
+        if (mc.player.getName().equalsIgnoreCase("XSS6_"))
             return ChatFormatting.DARK_BLUE + "[" + ChatFormatting.BLUE + "XSWARE" + ChatFormatting.DARK_BLUE + "] " + ChatFormatting.RESET;
         return ChatFormatting.GOLD + XSWARE.MODNAME + ChatFormatting.WHITE + " : " + ChatFormatting.RESET;
     }
 
-    public static void sendToggleMessage(Hack hack, boolean enabled) {
+    public static void sendToggleMessage(Module module, boolean enabled) {
         if(mc.world != null && mc.player != null) {
-            if(XSWARE.HACKS.ishackEnabled("Toggle msgs")) {
-                if (hack.getName().equalsIgnoreCase("gui")) return;
+            if(XSWARE.Modules.ishackEnabled("Toggle msgs")) {
+                if (module.getName().equalsIgnoreCase("gui")) return;
                 ChatFormatting open = (enabled ? ChatFormatting.GREEN : ChatFormatting.RED);
                 boolean compact = ToggleMessages.INSTANCE.compact.getValue();
-                if (hack.getName().equalsIgnoreCase("crystal aura")) {
+                if (module.getName().equalsIgnoreCase("crystal aura")) {
                     if (open == ChatFormatting.GREEN) {
                         sendMessage("we " + open + "gaming", !compact);
                     } else {
                         sendMessage("we aint " + open + "gaming " + ChatFormatting.RESET + "no more", !compact);
                     }
                 } else {
-                    sendMessage(open + hack.getName(), !compact);
+                    sendMessage(open + module.getName(), !compact);
                 }
             }
         }

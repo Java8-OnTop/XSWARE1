@@ -1,6 +1,6 @@
 package me.xss6.xsware.manager;
 
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 import me.xss6.xsware.util.elements.Timer;
 import me.xss6.xsware.util.Globals;
 import net.minecraft.util.math.MathHelper;
@@ -9,8 +9,8 @@ import java.text.DecimalFormat;
 import java.util.Arrays;
 import java.util.Objects;
 
-@Hack.Registration(name = "ServerManager", description = "Manages Server", category = Hack.Category.HIDDEN, isListening = true)
-public class ServerManager extends Hack {
+@Module.Registration(name = "ServerManager", description = "Manages Server", category = Module.Category.HIDDEN, isListening = true)
+public class ServerManager extends Module {
 
     private final float[] tpsCounts = new float[10];
     private final DecimalFormat format = new DecimalFormat("##.00#");

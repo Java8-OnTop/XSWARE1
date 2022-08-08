@@ -1,6 +1,6 @@
 package me.xss6.xsware.setting;
 
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +21,10 @@ public class Settings {
         return this.settings;
     }
 
-    public List<Setting> getSettingFromHack(Hack hack) {
+    public List<Setting> getSettingFromHack(Module module) {
         List<Setting> settings = new ArrayList<>();
         for (Setting setting : this.settings) {
-            if(setting.getParent() == hack) {
+            if(setting.getParent() == module) {
                 settings.add(setting);
             }
         }

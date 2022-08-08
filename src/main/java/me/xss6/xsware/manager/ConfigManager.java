@@ -6,10 +6,10 @@ import com.google.gson.GsonBuilder;
 import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.command.Commands;
 import me.xss6.xsware.gui.hud.element.HudElement;
-import me.xss6.xsware.hack.Hack;
-import me.xss6.xsware.hack.hacks.client.Gui;
-import me.xss6.xsware.hack.hacks.client.HudEditor;
-import me.xss6.xsware.hack.hacks.combat.Burrow;
+import me.xss6.xsware.module.Module;
+import me.xss6.xsware.module.modules.client.Gui;
+import me.xss6.xsware.module.modules.client.HudEditor;
+import me.xss6.xsware.module.modules.combat.Burrow;
 import me.xss6.xsware.setting.Setting;
 import me.xss6.xsware.setting.type.ColourSetting;
 import me.xss6.xsware.setting.type.KeySetting;
@@ -192,8 +192,8 @@ public class ConfigManager implements Globals {
     // LOAD & SAVE SETTINGS
 
     private void saveSettings() throws IOException {
-        for (Hack hack : XSWARE.HACKS.getHacks()) {
-            String fileName = activeConfigFolder + hack.getName() + ".txt";
+        for (Module module : XSWARE.Modules.getHacks()) {
+            String fileName = activeConfigFolder + module.getName() + ".txt";
             Path filePath = Paths.get(fileName);
             this.deleteFile(fileName);
             verifyFile(filePath);
@@ -201,7 +201,7 @@ public class ConfigManager implements Globals {
             File file = new File(fileName);
             BufferedWriter br = new BufferedWriter(new FileWriter(file));
 
-            for (Setting setting : hack.getSettings()) {
+            for (Setting setting : module.getSettings()) {
                 if (setting instanceof ColourSetting) {
                     ColourSetting color = (ColourSetting) setting;
                     br.write(setting.getName() + ":" + color.getValue().getRed() + ":" + color.getValue().getGreen()
@@ -222,8 +222,8 @@ public class ConfigManager implements Globals {
     }
 
     private void loadSettings() throws IOException {
-        for (Hack hack : XSWARE.HACKS.getHacks()) {
-            String file_name = activeConfigFolder + hack.getName() + ".txt";
+        for (Module module : XSWARE.Modules.getHacks()) {
+            String file_name = activeConfigFolder + module.getName() + ".txt";
             File file = new File(file_name);
             if (!file.exists()) continue;
             FileInputStream fi_stream = new FileInputStream(file.getAbsolutePath());
@@ -237,7 +237,7 @@ public class ConfigManager implements Globals {
                 String name = colune.split(":")[0];
                 String value = colune.split(":")[1];
 
-                Setting setting = hack.getSettingByName(name);
+                Setting setting = module.getSettingByName(name);
                 if (setting == null) continue;
                 switch (setting.getType()) {
                     case "boolean":
@@ -278,12 +278,12 @@ public class ConfigManager implements Globals {
     }
 
     private void clearSettings() {
-        for (Hack hack : XSWARE.HACKS.getHacks()) {
-            if (hack instanceof Gui || hack instanceof HudEditor) continue;
-            hack.setHold(false);
-            hack.setEnabled(false);
-            hack.setBind(Keyboard.KEY_NONE);
-            for (Setting setting : hack.getSettings()) {
+        for (Module module : XSWARE.Modules.getHacks()) {
+            if (module instanceof Gui || module instanceof HudEditor) continue;
+            module.setHold(false);
+            module.setEnabled(false);
+            module.setBind(Keyboard.KEY_NONE);
+            for (Setting setting : module.getSettings()) {
                 setting.setValue(setting.defaultValue);
             }
         }
@@ -300,7 +300,7 @@ public class ConfigManager implements Globals {
         final File file = new File(file_name);
         final BufferedWriter br = new BufferedWriter(new FileWriter(file));
         br.write(Commands.prefix + "\r\n");
-        for (Hack module : XSWARE.HACKS.getHacks()) {
+        for (Module module : XSWARE.Modules.getHacks()) {
             br.write(module.getName() + ":" + module.getBind() + ":" + module.isEnabled() + ":" + module.isHold() + "\r\n");
         }
         br.close();
@@ -325,10 +325,10 @@ public class ConfigManager implements Globals {
                     final String bind = colune.split(":")[1];
                     final String active = colune.split(":")[2];
                     final String hold = colune.split(":")[3];
-                    Hack hack = XSWARE.HACKS.getHackByName(tag);
-                    hack.setBind(Integer.parseInt(bind));
-                    hack.setHold(Boolean.parseBoolean(hold));
-                    hack.setEnabled(Boolean.parseBoolean(active));
+                    Module module = XSWARE.Modules.getHackByName(tag);
+                    module.setBind(Integer.parseInt(bind));
+                    module.setHold(Boolean.parseBoolean(hold));
+                    module.setEnabled(Boolean.parseBoolean(active));
                 }
 
             } catch (Exception ignored) {}
@@ -365,17 +365,17 @@ public class ConfigManager implements Globals {
 
     private void saveDrawn() throws IOException {
         FileWriter writer = new FileWriter(drawnDir);
-        for (Hack hack : XSWARE.HACKS.getDrawnHacks()) {
-            writer.write(hack.getName() + System.lineSeparator());
+        for (Module module : XSWARE.Modules.getDrawnHacks()) {
+            writer.write(module.getName() + System.lineSeparator());
         }
         writer.close();
     }
 
     private void loadDrawn() throws IOException {
         for (String hackName : Files.readAllLines(drawnPath).stream().distinct().collect(Collectors.toList())) {
-            Hack hack = XSWARE.HACKS.getHackByName(hackName);
-            if (hack == null) continue;
-            XSWARE.HACKS.addDrawHack(hack);
+            Module module = XSWARE.Modules.getHackByName(hackName);
+            if (module == null) continue;
+            XSWARE.Modules.addDrawHack(module);
         }
     }
 
@@ -420,7 +420,7 @@ public class ConfigManager implements Globals {
 
     private void loadBurrowBlock() throws IOException {
         for (String l : Files.readAllLines(burrowPath)){
-            Burrow a = (Burrow) XSWARE.HACKS.getHackByName("Burrow");
+            Burrow a = (Burrow) XSWARE.Modules.getHackByName("Burrow");
             new WhitelistUtil();
             a.setBlock(WhitelistUtil.findBlock(l));
             XSWARE.COMMANDS.getBurrowCommand().setBBlock(l);

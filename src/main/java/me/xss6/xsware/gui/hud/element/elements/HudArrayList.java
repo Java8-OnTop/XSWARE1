@@ -3,8 +3,8 @@ package me.xss6.xsware.gui.hud.element.elements;
 import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.event.events.Render2DEvent;
 import me.xss6.xsware.gui.hud.element.HudElement;
-import me.xss6.xsware.hack.Hack;
-import me.xss6.xsware.hack.hacks.client.HudEditor;
+import me.xss6.xsware.module.Module;
+import me.xss6.xsware.module.modules.client.HudEditor;
 import me.xss6.xsware.util.HudUtil;
 import me.xss6.xsware.util.RenderUtil2D;
 import me.xss6.xsware.util.elements.Colour;
@@ -50,12 +50,12 @@ public class HudArrayList extends HudElement {
         if (getX() < scaledResolution.getScaledWidth() / 2f) {
             isLeft = true;
         }
-        List<Hack> hacks = XSWARE.HACKS.getSortedHacks(isTop, HudEditor.INSTANCE.customFont.getValue());
+        List<Module> modules = XSWARE.Modules.getSortedHacks(isTop, HudEditor.INSTANCE.customFont.getValue());
         int bestWidth = 0;
         int y = 0;
-        for (Hack hack : hacks) {
-            if (XSWARE.HACKS.isDrawHack(hack)) continue;
-            String name = hack.getFullArrayString();
+        for (Module module : modules) {
+            if (XSWARE.Modules.isDrawHack(module)) continue;
+            String name = module.getFullArrayString();
             HudUtil.drawHudString(name, isLeft ? getX() : HudUtil.getRightX(name, getX() + width), this.getY() + y, HudEditor.INSTANCE.fontColor.getValue().hashCode());
             int w = HudUtil.getHudStringWidth(name);
             if (w > bestWidth) {

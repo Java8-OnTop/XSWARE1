@@ -4,8 +4,8 @@ import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.gui.XswareGuiNew;
 import me.xss6.xsware.gui.component.Component;
 import me.xss6.xsware.gui.component.HackButton;
-import me.xss6.xsware.hack.Hack;
-import me.xss6.xsware.hack.hacks.client.Gui;
+import me.xss6.xsware.module.Module;
+import me.xss6.xsware.module.modules.client.Gui;
 import me.xss6.xsware.setting.type.EnumSetting;
 import me.xss6.xsware.util.RenderUtil2D;
 
@@ -23,7 +23,7 @@ public class ModeComponent extends Component {
 
     private int modeIndex;
 
-    public ModeComponent(EnumSetting set, HackButton button, Hack mod, int offset){
+    public ModeComponent(EnumSetting set, HackButton button, Module mod, int offset){
         this.set = set;
         this.parent = button;
         this.offset = offset;

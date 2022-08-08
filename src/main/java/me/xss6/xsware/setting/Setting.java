@@ -1,7 +1,7 @@
 package me.xss6.xsware.setting;
 
 import me.xss6.xsware.XSWARE;
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 import me.xss6.xsware.setting.type.ParentSetting;
 
 import java.util.function.Predicate;
@@ -9,14 +9,14 @@ import java.util.function.Predicate;
 public class Setting<T> {
 
     private final String name;
-    private final Hack parent;
+    private final Module parent;
     private final ParentSetting parentSetting;
     public T value;
     public Predicate<T> shown;
     public T defaultValue;
 
 
-    public Setting(String name, T value, Hack parent) {
+    public Setting(String name, T value, Module parent) {
         this.name = name;
         this.value = value;
         this.defaultValue = value;
@@ -34,7 +34,7 @@ public class Setting<T> {
         XSWARE.SETTINGS.addSetting(this);
     }
 
-    public Setting(String name, T value, Hack parent, Predicate<T> shown) {
+    public Setting(String name, T value, Module parent, Predicate<T> shown) {
         this.name = name;
         this.value = value;
         this.defaultValue = value;
@@ -66,7 +66,7 @@ public class Setting<T> {
     	return "";
     }
 
-    public Hack getParent() {
+    public Module getParent() {
         return this.parent;
     }
 

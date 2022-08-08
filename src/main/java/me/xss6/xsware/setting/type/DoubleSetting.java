@@ -1,6 +1,6 @@
 package me.xss6.xsware.setting.type;
 
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 import me.xss6.xsware.setting.Setting;
 
 import java.util.function.Predicate;
@@ -10,7 +10,7 @@ public class DoubleSetting extends Setting<Double> {
     private final double min;
     private final double max;
 
-    public DoubleSetting(String name, Double value, Double min, Double max, Hack parent) {
+    public DoubleSetting(String name, Double value, Double min, Double max, Module parent) {
         super(name, value, parent);
         this.min = min;
         this.max = max;
@@ -22,7 +22,7 @@ public class DoubleSetting extends Setting<Double> {
         this.max = max;
     }
 
-    public DoubleSetting(String name, Double value, Double min, Double max, Hack parent, Predicate shown) {
+    public DoubleSetting(String name, Double value, Double min, Double max, Module parent, Predicate shown) {
         super(name, value, parent, shown);
         this.min = min;
         this.max = max;

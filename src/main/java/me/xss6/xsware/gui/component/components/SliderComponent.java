@@ -5,7 +5,7 @@ import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.gui.XswareGuiNew;
 import me.xss6.xsware.gui.component.Component;
 import me.xss6.xsware.gui.component.HackButton;
-import me.xss6.xsware.hack.hacks.client.Gui;
+import me.xss6.xsware.module.modules.client.Gui;
 import me.xss6.xsware.setting.type.DoubleSetting;
 import me.xss6.xsware.setting.type.IntSetting;
 import me.xss6.xsware.util.MathsUtil;

@@ -4,7 +4,7 @@ import com.mojang.realmsclient.gui.ChatFormatting;
 import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.event.events.Render2DEvent;
 import me.xss6.xsware.gui.hud.element.HudElement;
-import me.xss6.xsware.hack.hacks.client.HudEditor;
+import me.xss6.xsware.module.modules.client.HudEditor;
 import me.xss6.xsware.util.HudUtil;
 import me.xss6.xsware.util.RenderUtil2D;
 import me.xss6.xsware.util.elements.Colour;
@@ -42,15 +42,15 @@ public class HudHelper extends HudElement {
         RenderUtil2D.drawHLineG(this.getX() - padding, this.getY() - padding,
                 (this.getX() + padding + this.getWidth()) - (this.getX() - padding), Rainbow.getColour().hashCode(), Rainbow.getFurtherColour(HudEditor.INSTANCE.welcomerOffset.getValue()).hashCode());
 
-        String ca = (XSWARE.HACKS.ishackEnabled("Crystal Aura") ? ChatFormatting.GREEN + "CA" : (HudEditor.INSTANCE.showOff.getValue() ? ChatFormatting.RED + "CA" : "")) + ChatFormatting.RESET;
+        String ca = (XSWARE.Modules.ishackEnabled("Crystal Aura") ? ChatFormatting.GREEN + "CA" : (HudEditor.INSTANCE.showOff.getValue() ? ChatFormatting.RED + "CA" : "")) + ChatFormatting.RESET;
         displayStrings.add(ca);
-        String hf = (XSWARE.HACKS.ishackEnabled("Hole Fill") ? ChatFormatting.GREEN + "HF" : (HudEditor.INSTANCE.showOff.getValue() ? ChatFormatting.RED + "HF" : "")) + ChatFormatting.RESET;
+        String hf = (XSWARE.Modules.ishackEnabled("Hole Fill") ? ChatFormatting.GREEN + "HF" : (HudEditor.INSTANCE.showOff.getValue() ? ChatFormatting.RED + "HF" : "")) + ChatFormatting.RESET;
         displayStrings.add(hf);
-        String tr = (XSWARE.HACKS.ishackEnabled("Trap") ? ChatFormatting.GREEN + "TR" : (HudEditor.INSTANCE.showOff.getValue() ? ChatFormatting.RED + "TR" : "")) + ChatFormatting.RESET;
+        String tr = (XSWARE.Modules.ishackEnabled("Trap") ? ChatFormatting.GREEN + "TR" : (HudEditor.INSTANCE.showOff.getValue() ? ChatFormatting.RED + "TR" : "")) + ChatFormatting.RESET;
         displayStrings.add(tr);
-        String sr = (XSWARE.HACKS.ishackEnabled("Surround") ? ChatFormatting.GREEN + "SR" : (HudEditor.INSTANCE.showOff.getValue() ? ChatFormatting.RED + "SR" : "")) + ChatFormatting.RESET;
+        String sr = (XSWARE.Modules.ishackEnabled("Surround") ? ChatFormatting.GREEN + "SR" : (HudEditor.INSTANCE.showOff.getValue() ? ChatFormatting.RED + "SR" : "")) + ChatFormatting.RESET;
         displayStrings.add(sr);
-        String ka = (XSWARE.HACKS.ishackEnabled("Kill Aura") ? ChatFormatting.GREEN + "KA" : (HudEditor.INSTANCE.showOff.getValue() ? ChatFormatting.RED + "KA" : "")) + ChatFormatting.RESET;
+        String ka = (XSWARE.Modules.ishackEnabled("Kill Aura") ? ChatFormatting.GREEN + "KA" : (HudEditor.INSTANCE.showOff.getValue() ? ChatFormatting.RED + "KA" : "")) + ChatFormatting.RESET;
         displayStrings.add(ka);
 
         displayStrings.removeIf(string -> string.equalsIgnoreCase("" + ChatFormatting.RESET));

@@ -2,9 +2,9 @@ package me.xss6.xsware.mixin.mixins;
 
 import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.event.events.PerspectiveEvent;
-import me.xss6.xsware.hack.hacks.client.Gui;
-import me.xss6.xsware.hack.hacks.render.CameraClip;
-import me.xss6.xsware.hack.hacks.render.NoRender;
+import me.xss6.xsware.module.modules.client.Gui;
+import me.xss6.xsware.module.modules.render.CameraClip;
+import me.xss6.xsware.module.modules.render.NoRender;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;

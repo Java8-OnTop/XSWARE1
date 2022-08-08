@@ -5,8 +5,8 @@ import me.xss6.xsware.event.events.ColorCopyEvent;
 import me.xss6.xsware.event.processor.CommitEvent;
 import me.xss6.xsware.gui.component.CategoryComponent;
 import me.xss6.xsware.gui.component.Component;
-import me.xss6.xsware.hack.Hack;
-import me.xss6.xsware.hack.hacks.client.Gui;
+import me.xss6.xsware.module.Module;
+import me.xss6.xsware.module.modules.client.Gui;
 import me.xss6.xsware.util.elements.Colour;
 import net.minecraft.client.audio.PositionedSoundRecord;
 import net.minecraft.client.gui.GuiScreen;
@@ -59,7 +59,7 @@ public class XswareGuiNew extends GuiScreen {
         categoryComponents = new ArrayList<>();
         colorClipBoard = new Colour(0, 0, 0);
         int startX = 10;
-        for (Hack.Category category : XSWARE.HACKS.getCategories()) {
+        for (Module.Category category : XSWARE.Modules.getCategories()) {
             CategoryComponent categoryComponent = new CategoryComponent(category);
             categoryComponent.setX(startX);
             categoryComponents.add(categoryComponent);

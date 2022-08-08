@@ -4,8 +4,8 @@ import me.xss6.xsware.XSWARE;
 import me.xss6.xsware.gui.XswareGuiNew;
 import me.xss6.xsware.gui.hud.HudButton;
 import me.xss6.xsware.gui.hud.element.HudElement;
-import me.xss6.xsware.hack.Hack;
-import me.xss6.xsware.hack.hacks.client.Gui;
+import me.xss6.xsware.module.Module;
+import me.xss6.xsware.module.modules.client.Gui;
 import me.xss6.xsware.util.ColorUtil;
 import me.xss6.xsware.util.Globals;
 import me.xss6.xsware.util.RenderUtil2D;
@@ -19,7 +19,7 @@ import java.util.ArrayList;
 
 public class CategoryComponent implements Globals {
     public ArrayList<Component> components;
-    public Hack.Category category;
+    public Module.Category category;
     private final int width;
     private final int height;
     public int x;
@@ -29,7 +29,7 @@ public class CategoryComponent implements Globals {
     public int dragX;
     public int dragY;
 
-    public CategoryComponent(Hack.Category cat) {
+    public CategoryComponent(Module.Category cat) {
         this.category = cat;
         this.components = new ArrayList<>();
         this.width = XswareGuiNew.WIDTH;
@@ -41,14 +41,14 @@ public class CategoryComponent implements Globals {
         this.isDragging = false;
 
         int tY = this.height;
-        if(category.equals(Hack.Category.HUD)){
+        if(category.equals(Module.Category.HUD)){
             for(HudElement element : XSWARE.HUD_MANAGER.getHudElements()){
                 HudButton hudButton = new HudButton(element, this, tY);
                 components.add(hudButton);
                 tY += XswareGuiNew.HEIGHT + XswareGuiNew.MODULE_OFFSET;
             }
         }else {
-            for (Hack mod : XSWARE.HACKS.getHacksAlp()) {
+            for (Module mod : XSWARE.Modules.getHacksAlp()) {
                 if (mod.getCategory().equals(category)) {
                     HackButton moduleButton = new HackButton();
                     moduleButton.init(mod, this, tY, false);

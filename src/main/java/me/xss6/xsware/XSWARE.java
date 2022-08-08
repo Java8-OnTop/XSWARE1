@@ -6,7 +6,7 @@ import me.xss6.xsware.event.processor.EventProcessor;
 import me.xss6.xsware.gui.XswareGuiNew;
 import me.xss6.xsware.gui.hud.XswareHudGui;
 import me.xss6.xsware.gui.hud.element.HudManager;
-import me.xss6.xsware.hack.Hacks;
+import me.xss6.xsware.module.Modules;
 import me.xss6.xsware.manager.*;
 import me.xss6.xsware.manager.fonts.DonatorFont;
 import me.xss6.xsware.manager.fonts.GuiFont;
@@ -41,7 +41,7 @@ public class XSWARE {
     public static Commands COMMANDS;
 
     // hacks
-    public static Hacks HACKS;
+    public static Modules Modules;
 
     // settings
     public static Settings SETTINGS;
@@ -96,7 +96,7 @@ public class XSWARE {
         SETTINGS = new Settings();
         RENDER_UTIL_2D = new RenderUtil2D();
         COMMANDS = new Commands();
-        HACKS = new Hacks();
+        Modules = new Modules();
         HUD_MANAGER = new HudManager();
         this.loadManagers();
         CLIENT_HANDLING = new ClientHandling();
