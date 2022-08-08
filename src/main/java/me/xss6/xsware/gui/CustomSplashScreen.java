@@ -131,7 +131,7 @@ public class CustomSplashScreen extends GuiScreen {
         GlStateManager.disableBlend();
         this.mc.getTextureManager().bindTexture(this.background);
         CustomSplashScreen.drawCompleteImage(-16.0f + xOffset, -9.0f + yOffset, this.width + 32, this.height + 18);
-        String watermark = XSWARE.MODNAME + " v" + XSWARE.MODVER + " : made by XSS6#0001";
+        String watermark = XSWARE.MODNAME + " v" + XSWARE.MODVER + " : made by XSS6#0001, Smellyboars, And chocolate milk";
         for (DonatorItem item : this.donatorItems) {
             item.updatePos();
             switch (item.getSize()) {
