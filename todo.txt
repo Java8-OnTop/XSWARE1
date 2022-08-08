@@ -1,3 +1,4 @@
 1. exploits category
 2. AutoWilly builds obsidian cock automatically
 3. change splash
+4. add autoupdater for premium users (smellyboars will do)
