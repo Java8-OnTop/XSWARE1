@@ -1,3 +1,2 @@
 1. exploits category
-2. make splashscreen work instead of displaying notexture icon
-3. AutoWilly builds obsidian cock aut automatically
+2. AutoWilly builds obsidian cock automatically
