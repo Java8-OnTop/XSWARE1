@@ -20,16 +20,16 @@ import java.util.ArrayList;
 
 public class XswareGuiNew extends GuiScreen {
 
-    public static final int WIDTH = 120;
-    public static final int HEIGHT = 16;
+    public static final int WIDTH = 90;
+    public static final int HEIGHT = 15;
     public static final int MODULE_WIDTH = 5;
     public static final int MODULE_OFFSET = 0;
     public static final int SETTING_OFFSET = 5;
 
-    public static final int FONT_HEIGHT = 4;
-    public static final int MODULE_FONT_SIZE = 6;
-    public static final int SUB_FONT_SIZE = 2 * MODULE_FONT_SIZE;
-    public static final int COLOR_FONT_SIZE = 2 * SUB_FONT_SIZE;
+    public static final int FONT_HEIGHT = 2;
+    public static final int MODULE_FONT_SIZE = 3;
+    public static final int SUB_FONT_SIZE = MODULE_FONT_SIZE;
+    public static final int COLOR_FONT_SIZE = SUB_FONT_SIZE;
 
     public Colour colorClipBoard;
     public ColorCopyEvent colorEvent;
@@ -63,7 +63,7 @@ public class XswareGuiNew extends GuiScreen {
             CategoryComponent categoryComponent = new CategoryComponent(category);
             categoryComponent.setX(startX);
             categoryComponents.add(categoryComponent);
-            startX += categoryComponent.getWidth() + 10;
+            startX += categoryComponent.getWidth() + 2;
             flag = false;
         }
     }
