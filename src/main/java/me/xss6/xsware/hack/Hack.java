@@ -209,6 +209,7 @@ public class Hack implements Globals {
         CLIENT("Client"),
         HIDDEN("Hidden"),
         HUD("Hud");
+        EXPLOITS("EXPLOITS");
 
 
         private final String name;
