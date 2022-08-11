@@ -2,7 +2,7 @@ package me.xss6.xsware.module.modules.movement;
 
 import me.xss6.xsware.module.Module;
 
-@Module.Registration(name = "Infinite Jump", description = "Jump.. infinitely", category = Hack.Category.MOVEMENT, isListening = false)
+@Module.Registration(name = "Infinite Jump", description = "Jump.. infinitely", category = Module.Category.MOVEMENT, isListening = false)
 public class InfiniteJump extends Module{
     @Override
     public void onTick() {
