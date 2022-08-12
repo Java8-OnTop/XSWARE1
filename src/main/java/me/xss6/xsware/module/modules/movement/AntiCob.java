@@ -1,9 +1,9 @@
-package me.xss6.xsware.hack.hacks.movement;
+package me.xss6.xsware.module.modules.movement;
 
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 
-@Hack.Registration(name = "AntiCobweb", description = "Cobwebs don't work on me!!", category = Hack.Category.MOVEMENT, isListening = false)
-public class AntiCob extends Hack {
+@Module.Registration(name = "AntiCobweb", description = "Cobwebs don't work on me!!", category = Module.Category.MOVEMENT, isListening = false)
+public class AntiCob extends Module {
     public void onTick() {
         mc.player.isInWeb = false;
     }
