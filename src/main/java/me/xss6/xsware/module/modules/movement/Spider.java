@@ -1,10 +1,10 @@
-package me.xss6.xsware.hack.hacks.movement;
+package me.xss6.xsware.module.modules.movement;
 
-import me.xss6.xsware.hack.Hack;
+import me.xss6.xsware.module.Module;
 import net.minecraft.client.Minecraft;
-@Hack.Registration(name = "Spider", description = "Spiderman, Spiderman", category = Hack.Category.MOVEMENT, isListening = false)
+@Module.Registration(name = "Spider", description = "Spiderman, Spiderman", category = Module.Category.MOVEMENT, isListening = false)
 
-public class Spider extends Hack{
+public class Spider extends Module{
 
     public void onTick() {
         if(mc.player.collidedHorizontally) {
